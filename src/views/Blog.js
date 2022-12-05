@@ -33,6 +33,12 @@ const Blog = () => {
     setNewData(data);
   };
 
+  const deletePost = (id) => {
+    let data = newData;
+    data = data.filter((item) => item.id !== id);
+    setNewData(data);
+  };
+
   return (
     <>
       <Button variant="primary" className="my-3" onClick={handleShow}>
@@ -55,7 +61,10 @@ const Blog = () => {
           newData.map((item) => {
             return (
               <div className="single-blog" key={item.id}>
-                <div className="title">{item.title}</div>
+                <div className="title">
+                  <span>{item.title}</span>
+                  <span onClick={() => deletePost(item.id)}>X</span>
+                </div>
                 <div className="content">Content: {item.body}</div>
                 <button>
                   <Link to={`/blog/${item.id}`}>View Detail</Link>

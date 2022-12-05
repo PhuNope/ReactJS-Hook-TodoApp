@@ -9,6 +9,7 @@ import Covid from "./Covid";
 import Blog from "./Blog";
 import DetailBlog from "./DetailBlog";
 import AddNewBlog from "./AddNewBlog";
+import NotFound from "./NotFound";
 import { CountDown, NewCountDown } from "./Countdown";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -117,6 +118,10 @@ function App() {
 
           <Route path="/add-new-blog">
             <AddNewBlog />
+          </Route>
+
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>

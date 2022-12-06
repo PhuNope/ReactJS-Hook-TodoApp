@@ -10,11 +10,11 @@ import Blog from "./Blog";
 import DetailBlog from "./DetailBlog";
 import AddNewBlog from "./AddNewBlog";
 import NotFound from "./NotFound";
+import YoutubeSearch from "./YoutubeSearch";
 import { CountDown, NewCountDown } from "./Countdown";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  let [name, setName] = useState("Nope");
   const [address, setAddress] = useState("");
   const [todos, setTodos] = useState([
     { id: "todo1", title: "Watching YouTube", type: "Nope" },
@@ -70,8 +70,6 @@ function App() {
         <header className="App-header">
           <Nav></Nav>
           <img src={logo} className="App-logo" alt="logo" />
-
-          <h1>Hello world with React and {name}</h1>
         </header>
 
         <Switch>
@@ -118,6 +116,10 @@ function App() {
 
           <Route path="/add-new-blog">
             <AddNewBlog />
+          </Route>
+
+          <Route path="/secret">
+            <YoutubeSearch />
           </Route>
 
           <Route path="*">
